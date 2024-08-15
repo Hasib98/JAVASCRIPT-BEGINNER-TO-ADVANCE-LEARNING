@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS LWS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- <button onclick="startWorker()">Start Worker</button>
+    <button onclick="stopWorker()">Stop Worker</button>
+    <button onclick="alert('hellow')">Click</button>
+    <button onclick="getData()">Data</button>
+    <button onclick="getData_async()">Data</button>
+    <button onclick="getGeolocation()">Geo Location</button>
+
+    <p id="disp"></p>
+    <p id="display"></p>
+
+    <div id="demo">
+        <h1>Ajax is developer's dream</h1>
+        <p>
+            <button onclick="loadData(myCallback1)">Change this content</button>
+        </p>
+        <p>
+            <button onclick="loadData()">Change demo2 content</button>
+        </p>
+    </div>
+
+    <div id="demo2"></div>
+    <h1 id="jsonString">JSON</h1>
+    <h2 id="para">hasib</h2>
+
+
+    <h1>Amar baal JSON</h1>
+    <p id="jsondemo"></p> -->
+
+
+    <div>
+        <h2>Make a table based on the value of a drop down menu.</h2>
+
+        <select id="myselect" onchange="change_myselect(this.value)">
+            <option value="">Choose an option:</option>
+            <option value="customers">Customers</option>
+            <option value="products">Products</option>
+            <option value="suppliers">Suppliers</option>
+        </select>
+
+        <p id="table"></p>
+    </div>
+    <!-- <script src="./test.js"> </script> -->
+    <script>
+        async function change_myselect(sel) {
+            const dbParam = JSON.stringify({ table: sel, limit: 20 });
+            const response = await fetch("json_demo_html_table.php", {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/x-www-form-urlencoded",
+                },
+                body: "x=" + dbParam,
+
+            });
+
+            const data = await response.json();
+            console.log(data)
+        }
+    </script>
+</body>
+
+</html>
